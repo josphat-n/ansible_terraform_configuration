@@ -2,8 +2,17 @@
 - hosts: all
   become: yes
   tasks:
-    - name: update aptitude
+    - name: update aptitude.
       apt:
         name: aptitude
+        state: latest
+        update_cache: true
+    - name: Install docker pre-requisites.
+      apt:
+        pkg:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
         state: latest
         update_cache: true
