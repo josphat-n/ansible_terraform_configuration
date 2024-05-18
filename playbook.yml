@@ -2,3 +2,8 @@
 - hosts: all
   become: yes
   tasks:
+    - name: update aptitude
+      apt:
+        name: aptitude
+        state: latest
+        update_cache: true
