@@ -79,3 +79,10 @@
       loop:
         - docker.service
         - containerd.service
+
+    - name: Clone yolo repository
+      git:
+        repo: https://github.com/josphat-n/yolo
+        dest: /var/www/yolo
+        version: master
+        update: yes
