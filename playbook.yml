@@ -6,3 +6,4 @@
     - update_ubuntu
     - docker_installation
     - clone_yolo_repo
+    - create_docker_network

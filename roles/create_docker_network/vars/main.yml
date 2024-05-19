@@ -1,0 +1,3 @@
+---
+# vars file for create_docker_network
+network_name: app_network

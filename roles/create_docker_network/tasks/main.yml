@@ -1,0 +1,6 @@
+---
+# tasks file for create_docker_network
+- name: "Create docker network: {{ network_name }}"
+  ansible.builtin.docker_network:
+    name: "{{ network_name }}"
+    driver: bridge
