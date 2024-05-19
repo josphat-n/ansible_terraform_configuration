@@ -7,3 +7,4 @@
     - docker_installation
     - clone_yolo_repo
     - create_docker_network
+    - create_frontend_docker_image

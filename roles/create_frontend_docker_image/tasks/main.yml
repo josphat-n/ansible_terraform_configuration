@@ -1,0 +1,20 @@
+---
+# tasks file for create_frontend_docker_image
+- name: Build Docker image from Dockerfile
+  docker_image:
+    source: build
+    build:
+      path: "{{ path_to_dockerfile }}"
+    name: "{{ image_name }}"
+    tag: "{{ image_tag }}"
+
+- name: "create {{ container_name }} container"
+  ansible.builtin.docker_container:
+    name: "{{ container_name }}"
+    image: "{{ image_name }}:{{ image_tag }}"
+    auto_remove: yes
+    detach: yes
+    ports: "{{ container_ports }}"
+    restart: true
+    networks:
+      - name: "{{ network_name }}"
