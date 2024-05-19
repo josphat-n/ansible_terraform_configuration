@@ -1,0 +1,10 @@
+---
+# vars file for create_db_docker_image
+image: mongo
+image_tag: 4.0-xenial
+ansible_user: vagrant
+persistent_db_path: /var/opt/yolomy
+container_name: db
+container_ports: "27019:27017"
+container_volumes: /var/opt/yolomy:/data/db
+network_name: app_network

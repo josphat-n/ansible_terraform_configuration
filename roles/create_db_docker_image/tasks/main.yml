@@ -1,0 +1,24 @@
+---
+# tasks file for create_db_docker_image
+- name: "pull {{ image }}:{{ image_tag }}"
+  ansible.builtin.docker_image:
+    name: "{{ image }}"
+    tag: "{{ image_tag }}"
+    source: pull
+
+- name: Create persistent volume for the database
+  ansible.builtin.file:
+    path: "{{ persistent_db_path }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+
+- name: "create {{ container_name }} container"
+  ansible.builtin.docker_container:
+    name: "{{ container_name }}"
+    image: "{{ image }}:{{ image_tag }}"
+    detach: yes
+    ports: "{{ container_ports }}"
+    restart: true
+    volumes: "{{ container_volumes }}"
+    networks:
+      - name: "{{ network_name }}"

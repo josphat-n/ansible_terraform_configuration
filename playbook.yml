@@ -9,3 +9,4 @@
     - create_docker_network
     - create_frontend_docker_image
     - create_backend_docker_image
+    - create_db_docker_image
