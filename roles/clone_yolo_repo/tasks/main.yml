@@ -1,0 +1,11 @@
+---
+# tasks file for clone_yolo_repo
+- name: Clone yolo repository
+  git:
+    repo: https://github.com/{{ repo_name }}
+    dest: /var/www/yolo
+    version: master
+    update: yes
+
+- name: Copy environment variables
+  shell: echo "{{ lookup('file', '.env') }}" > /var/www/yolo/.env
