@@ -1,0 +1,32 @@
+---
+# tasks file for use_nginx
+- name: Pull Nginx Image
+  ansible.builtin.docker_image:
+    name: "{{ image }}"
+    source: pull
+
+- name: Create persistent config volume
+  ansible.builtin.file:
+    path: "{{ persistent_nginx_path }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+
+- name: Create persistent config file
+  ansible.builtin.file:
+    dest: "{{ persistent_nginx_conf_path }}"
+    owner: "{{ ansible_user }}"
+    state: touch
+
+- name: Copy nginx config file.
+  shell: echo "{{ lookup('file', 'yolo.conf') }}" > /etc/nginx/nginx.conf
+
+- name: "Create {{ container_name }} container"
+  ansible.builtin.docker_container:
+    name: "{{ container_name }}"
+    image: "{{ image }}"
+    detach: yes
+    ports: "{{ container_ports }}"
+    restart: true
+    volumes: "{{ container_volumes }}"
+    networks:
+      - name: "{{ network_name }}"

@@ -10,3 +10,4 @@
     - create_frontend_docker_image
     - create_backend_docker_image
     - create_db_docker_image
+    - use_nginx
