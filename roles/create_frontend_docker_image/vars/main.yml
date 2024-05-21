@@ -4,5 +4,5 @@ path_to_dockerfile: /var/www/yolo/client
 image_name: client
 container_name: client
 image_tag: 1.0.0
-container_ports: "3008:3008"
+container_ports: "3000:3000"
 network_name: app_network
