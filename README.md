@@ -1,4 +1,4 @@
-## About
+## About.
 This project hosts docker containerized e-commerce website hosted on a vagrant provisioned server.
 
 ## Requirements.
