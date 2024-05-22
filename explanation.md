@@ -1,6 +1,10 @@
 ## About.
 
 This file explains the reasoning behind the order of execution of plays (roles) within the main playbook.
+Custom plays have been installed using `ansible-galaxy init <custom-name>`to configure this application. This has the
+advantage of initializing the application with the correct folder structure.
+Tasks for each play are located in the task folder within the main.yml file. Likewise, custom variables are located in
+the vars folder of each play.
 
 ## Order of execution.
 
@@ -64,7 +68,8 @@ This file explains the reasoning behind the order of execution of plays (roles) 
 - The container is then attached to the network created in step four above.
 
 ### 8. Configure Nginx:
+
 - Nginx is a web server that can also be used as a reverse proxy.
-- It is used in this project to proxy requests to frontend and backend. 
+- It is used in this project to proxy requests to frontend and backend.
 - Like the db container, an image hosted in docker hub is used.
 - A configuration file is created and shared in the nginx's volume.
