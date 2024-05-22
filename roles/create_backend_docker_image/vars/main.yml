@@ -1,8 +1,8 @@
 ---
 # vars file for create_backend_docker_image
 path_to_dockerfile: /var/www/yolo/backend
-image_name: api
-container_name: api
+image_name: backend
+container_name: backend
 image_tag: 1.0.0
 container_ports: "5000:5000"
 network_name: app_network
