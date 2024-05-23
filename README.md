@@ -1,5 +1,5 @@
 ## About.
-This project hosts docker containerized e-commerce website hosted on a vagrant provisioned server.
+This project hosts docker containerized e-commerce website known as Yolomy on a vagrant provisioned server.
 
 ## Requirements.
 Make sure that you have the following installed and correctly configured:
@@ -14,5 +14,6 @@ Make sure that you have the following installed and correctly configured:
 5. `ansible-playbook playbook.yml` : Run ansible playbook which will in turn make several installations in the vm.
 
 ## Interacting with the application.
-- Open your favourite browser in your host machine and in access the provisioned vm via `http://192.168.56.12:3000/`.
-- Go ahead and add a product (note that the price field only takes a numeric input). You should also view all added products upon refreshing the page.
+- Open your favourite browser in your host machine and access Yolomy in the provisioned vm via `http://192.168.56.12` or `http://192.168.56.12:3000`.
+- Go ahead and add a product (note that the price field only takes a numeric input). 
+- You should also view all added products upon refreshing the page.
