@@ -25,8 +25,9 @@
     name: "{{ container_name }}"
     image: "{{ image }}"
     detach: yes
+    exposed_ports: "80"
     ports: "{{ container_ports }}"
-    restart: true
+    restart_policy: "always"
     volumes: "{{ container_volumes }}"
     networks:
       - name: "{{ network_name }}"
